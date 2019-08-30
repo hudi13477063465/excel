@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	    <meta name="apple-mobile-web-app-status-bar-style" content="black"> 
+	    <meta name="apple-mobile-web-app-capable" content="yes">
+	    <meta name="format-detection" content="telephone=no">
+		<title>工资计算工具</title>
+		<link rel="stylesheet" href="layui/css/layui.css" media="all" />
+		<link rel="stylesheet" href="css/global.css" media="all" />
+		<link rel="stylesheet" href="css/font-awesome/css/font-awesome.css" media="all" />
+		
+	</head>
+
+	<body>
+		<div class="layui-layout layui-layout-admin" style="border-bottom: solid 5px #1aa094;">
+		<div class='form-group'>
+				<label class='col-md-2 control-label'></label>
+				<div class='col-md-10'>
+					<button type="button" class="layui-btn" id="test1">
+	  					<i class="layui-icon">&#xe67c;</i>上传文件
+					</button>
+				</div>
+			</div>
+			<script type="text/javascript" src="layui/layui.js"></script>
+			<script type="text/javascript" src="js/libs/jquery-2.1.1.min.js"></script>
+			<script type="text/javascript" src="js/jq.js"></script>
+			<script type="text/javascript">
+			
+			layui.use(['upload','layer'], function(){
+				  var layer = layui.layer;
+				  var upload = layui.upload;
+				  upload.render({
+				    elem: '#test1' //绑定元素
+				    ,url: '/files' //上传接口
+				    ,accept:'file'
+				    ,done: function(res, index, upload){
+				    	alert(1);
+				    }
+				  });
+				});
+			
+			</script>
+		</div>
+</body>
+
+</html>
